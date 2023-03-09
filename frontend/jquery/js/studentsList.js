@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
 
     $("formSearchStudent").submit((Event) => {
-        Event.preventDefaut();
+        Event.preventDefault();
         fetchStudentList(Event.target.searchInput.value);      
     });
 });

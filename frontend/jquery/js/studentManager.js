@@ -49,8 +49,8 @@ $(document).ready(function() {
 
 function setReadOnlyFields(){
     const studentForm = $("#studentForm");
-    studentForm.find("#ra").attr('readyonly', true);
-    studentForm.find("#cpf").attr('readyonly', true);
+    studentForm.find("#ra").attr('readonly', true);
+    studentForm.find("#cpf").attr('readonly', true);
 }
 
 function fetchStudent() { 
@@ -60,7 +60,7 @@ function fetchStudent() {
             })
             .then(function(data) {
                 const studentForm = $("#studentForm");
-                studentForm.find("#nome").val(data.nome);
+                studentForm.find("#name").val(data.nome);
                 studentForm.find("#email").val(data.email);
                 studentForm.find("#cpf").val(data.cpf);
                 studentForm.find("#ra").val(data.ra);
@@ -80,7 +80,7 @@ function isEditingMode() {
 
 }
 
-function getRAFronUrl() {
+function getRAFromUrl() {
     const urlSearch = new URLSearchParams(window.location.search);
      return urlSearch.get("ra");
 }
